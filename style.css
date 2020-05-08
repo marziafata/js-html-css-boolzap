@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: lightgrey;
+    background-color: gainsboro;
     padding-bottom: 20px;
 }
 
@@ -26,11 +26,11 @@ body {
     width: 1369px;
     height: 100%;
     margin: auto;
+    box-shadow: 0px 3px 8px 0px rgb(0, 0, 0, 0.4);
 }
 
 .lato_sinistro {
     width: 30%;
-    background-color: lightblue;
     height: 100%;
     float: left;
 }
@@ -44,13 +44,13 @@ body {
 .header, .header_right {
     height: 59px;
     width: 100%;
-    background-color: orange;
+    background-color: #ededed;
 }
 
 .input {
     height: 49px;
     width: 100%;
-    background-color: lightgreen;
+    background-color: #f7f7f7;
 }
 
 .amici_wrap {
@@ -61,33 +61,46 @@ body {
 .amici {
     height: 72px;
     width: 100%;
-    background-color: coral;
 }
 
 .avatar {
     height: 100%;
     width: 72px;
-    background-color: AliceBlue;
+    background-color: white;
     float: left;
 }
 
 .nome {
     height: 100%;
     width: calc(100% - 72px);
-    background-color: AntiqueWhite;
+    background-color: white;
     float: left;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ededed;
 }
 
 .chat {
-    height: 100%;
+    height: calc(100% - 121px);
     width: 100%;
     background-image: url("wallpaper.jpg");
+    background-repeat: repeat;
     background-size: contain;
 }
 
-.footer {
+.footer_right {
     width: 100%;
     height: 62px;
-    background-color: CadetBlue;
+}
+
+.icona {
+    height: 62px;
+    width: 10%;
+    background-color: #ededed;
+    float: left;
+}
+
+.input_footer {
+    height: 62px;
+    width: 80%;
+    background-color: #ededed;
+    float: left;
 }
