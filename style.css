@@ -5,14 +5,66 @@
 }
 body {
     background-color: lightgrey;
-    display: flex;
-    align-items: center;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .container {
-    width: 1369px;
+    width: 100%;
     background-color: pink;
     height: calc(100vh - 40px);
+    display: flex;
+    align-items: center;
+}
+
+.schermata {
+    width: 1369px;
+    height: 100%;
     margin: auto;
+}
+
+.contatti {
+    width: 30%;
+    background-color: lightblue;
+    height: 100%;
+    float: left;
+}
+
+.chat {
+    width: 70%;
+    background-color: lightyellow;
+    height: 100%;
+    float: left;
+}
+
+.header {
+    height: 59px;
+    width: 100%;
+    background-color: orange;
+}
+
+.input {
+    height: 49px;
+    width: 100%;
+    background-color: lightgreen;
+}
+
+.amici {
+    height: 72px;
+    width: 100%;
+    background-color: coral;
+}
+
+.avatar {
+    height: 100%;
+    width: 72px;
+    background-color: AliceBlue;
+    float: left;
+}
+
+.nome {
+    height: 100%;
+    width: calc(100% - 72px);
+    background-color: AntiqueWhite;
+    float: left;
+    border-bottom: 1px solid grey;
 }
