@@ -28,21 +28,20 @@ body {
     margin: auto;
 }
 
-.contatti {
+.lato_sinistro {
     width: 30%;
     background-color: lightblue;
     height: 100%;
     float: left;
 }
 
-.chat {
+.lato_destro {
     width: 70%;
-    background-color: lightyellow;
     height: 100%;
     float: left;
 }
 
-.header {
+.header, .header_right {
     height: 59px;
     width: 100%;
     background-color: orange;
@@ -52,6 +51,11 @@ body {
     height: 49px;
     width: 100%;
     background-color: lightgreen;
+}
+
+.amici_wrap {
+    height: calc(100% - 108px);
+    overflow: auto;
 }
 
 .amici {
@@ -73,4 +77,17 @@ body {
     background-color: AntiqueWhite;
     float: left;
     border-bottom: 1px solid grey;
+}
+
+.chat {
+    height: 100%;
+    width: 100%;
+    background-image: url("wallpaper.jpg");
+    background-size: contain;
+}
+
+.footer {
+    width: 100%;
+    height: 62px;
+    background-color: CadetBlue;
 }
