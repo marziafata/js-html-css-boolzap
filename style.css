@@ -40,13 +40,47 @@ body {
     height: 59px;
     width: 100%;
     background-color: #ededed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar_proprietario {
+    background-color: pink;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-left: 10px;
+}
+.fas {
+    color: grey;
+    margin-right: 25px;
+    font-size: 25px;
+    cursor: pointer;
 }
 
 .input {
     height: 49px;
     width: 100%;
     background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
+
+input, input:focus {
+    width: 100%;
+    /* border: 1px solid rgb(0, 0, 0, 0.4); */
+    border-radius: 20px;
+    height: 30px;
+    background-color: white;
+    border-style: none;
+    outline: none;
+    padding-left: 20px;
+}
+
 
 .amici_wrap {
     height: calc(100% - 108px);
@@ -63,22 +97,47 @@ body {
     width: 72px;
     background-color: white;
     float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.nome {
+.cerchio {
+    background-color: pink;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.dati_contatto {
     height: 100%;
     width: calc(100% - 72px);
     background-color: white;
     float: left;
     border-bottom: 1px solid #ededed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nome {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+.didascalia {
+    font-size: small;
+    font-family: Helvetica, Arial, sans-serif;
+    color: rgb(0, 0, 0, 0.7);
 }
 
 .chat {
     height: calc(100% - 121px);
     width: 100%;
     background-image: url("mine.jpg");
-    /* background-repeat: repeat;
-    background-size: contain; */
 }
 
 .footer_right {
