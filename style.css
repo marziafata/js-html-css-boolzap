@@ -248,7 +248,7 @@ input, input:focus {
 	margin-left: -20px;
 }
 
-.fumetto_verde:after {
+.fumetto_verde.primo:after {
     content: '';
 	position: absolute;
     right: 3px;
