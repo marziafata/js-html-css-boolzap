@@ -186,6 +186,77 @@ input, input:focus {
     background-image: url("mine.jpg");
 }
 
+
+.container_chat {
+    width: 80%;
+    margin: auto;
+    height: 100%;
+    padding-bottom: 20px;
+    overflow: auto;
+}
+
+.riga_messaggio {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.out {
+    align-items: flex-end;
+}
+
+.in {
+    align-items: flex-start;
+}
+
+.fumetto_verde {
+    background-color: #dcf8c6;
+    margin-right: 20px;
+}
+
+
+.fumetto_bianco {
+    background-color: white;
+    margin-left: 20px;
+}
+
+.fumetto_verde, .fumetto_bianco {
+	position: relative;
+    max-width: 70%;
+	border-radius: .4em;
+    padding: 10px;
+}
+
+.fumetto_bianco:after {
+	content: '';
+	position: absolute;
+    left: 3px;
+    top: 10px;
+	width: 0;
+	border: 20px solid transparent;
+	border-right-color: white;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+
+.fumetto_verde:after {
+    content: '';
+	position: absolute;
+    right: 3px;
+    top: 10px;
+	width: 0;
+	border: 20px solid transparent;
+	border-left-color: #dcf8c6;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-right: -20px;
+}
+
 .footer_right {
     width: 100%;
     height: 62px;
