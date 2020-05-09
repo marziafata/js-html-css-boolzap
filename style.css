@@ -4,10 +4,11 @@
     box-sizing: border-box;
 }
 body {
-    /* background-color: gainsboro; */
     padding: 20px 0;
     background: rgb(1,150,136);
     background: linear-gradient(180deg, rgba(1,150,136,1) 128px, rgba(218,219,212,1) 128px);
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 0.5px;
 }
 
 .container {
@@ -53,6 +54,7 @@ body {
 .avatar_proprietario {
     float: left;
     margin-left: 10px;
+    cursor: pointer;
 }
 .fas {
     color: #919191;
@@ -151,13 +153,11 @@ input, input:focus {
 .nome, .nome_chat {
     font-weight: 500;
     font-size: 15px;
-    font-family: Helvetica, Arial, sans-serif;
     text-transform: capitalize;
 }
 
 .didascalia, .orario {
     font-size: small;
-    font-family: Helvetica, Arial, sans-serif;
     color: rgb(0, 0, 0, 0.7);
 }
 
@@ -172,10 +172,12 @@ input, input:focus {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    cursor: pointer;
 }
 
 .avatar_attivo img, .nome_chat {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .chat {
@@ -194,6 +196,7 @@ input, input:focus {
     width: 10%;
     background-color: #ededed;
     float: left;
+    position: relative;
 }
 
 .input_footer {
@@ -201,4 +204,18 @@ input, input:focus {
     width: 80%;
     background-color: #ededed;
     float: left;
+}
+
+.input_footer input {
+    height: 40px;
+}
+
+.fa-grin, .fa-microphone {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: #919191;
+    cursor: pointer;
 }
