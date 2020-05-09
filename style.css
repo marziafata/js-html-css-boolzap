@@ -28,6 +28,7 @@ body {
     width: 30%;
     height: 100%;
     float: left;
+    border-right: 1px solid gainsboro;
 }
 
 .lato_destro {
@@ -45,18 +46,18 @@ body {
     align-items: center;
 }
 
+.header_left {
+    border-bottom: 1px solid gainsboro;
+}
+
 .avatar_proprietario {
-    background-color: pink;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
     float: left;
     margin-left: 10px;
 }
 .fas {
-    color: grey;
+    color: #919191;
     margin-right: 25px;
-    font-size: 25px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -67,18 +68,32 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+body > div > div > div.lato_sinistro > div.header_left > div.input > i {
+    position: absolute;
+    top: 50%;
+    left: 17px;
+    transform: translateY(-50%);
+    color: rgb(0, 0, 0, 0.5);
+    font-size: 13px;
 }
 
 input, input:focus {
     width: 100%;
-    /* border: 1px solid rgb(0, 0, 0, 0.4); */
     border-radius: 20px;
     height: 30px;
     background-color: white;
     border-style: none;
     outline: none;
-    padding-left: 20px;
+    padding-left: 30px;
+
+}
+
+::placeholder {
+  color: rgb(0, 0, 0, 0.5);
 }
 
 
@@ -90,30 +105,33 @@ input, input:focus {
 .amici {
     height: 72px;
     width: 100%;
+    background-color: white;
 }
+
+.click {
+    background-color: gainsboro;
+}
+
+.amici:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
 
 .avatar {
     height: 100%;
     width: 72px;
-    background-color: white;
     float: left;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border-bottom: 1px solid white;
 }
 
-.cerchio {
-    background-color: pink;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-}
 
 .dati_contatto {
     height: 100%;
     width: calc(100% - 72px);
-    background-color: white;
     float: left;
     border-bottom: 1px solid #ededed;
     display: flex;
@@ -121,17 +139,43 @@ input, input:focus {
     justify-content: center;
 }
 
-.nome {
+.riga1, .riga2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.orario {
+    margin-right: 10px;
+}
+
+.nome, .nome_chat {
     font-weight: 500;
     font-size: 15px;
     font-family: Helvetica, Arial, sans-serif;
     text-transform: capitalize;
 }
 
-.didascalia {
+.didascalia, .orario {
     font-size: small;
     font-family: Helvetica, Arial, sans-serif;
     color: rgb(0, 0, 0, 0.7);
+}
+
+.fa-chevron-down {
+    font-size: small;
+    color: rgb(0, 0, 0, 0.7);
+    margin-right: 10px;
+    display: none;
+}
+
+.avatar_attivo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.avatar_attivo img, .nome_chat {
+    margin-left: 10px;
 }
 
 .chat {
