@@ -184,13 +184,14 @@ input, input:focus {
     height: calc(100% - 121px);
     width: 100%;
     background-image: url("mine.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 
 .container_chat {
     width: 80%;
-    margin: auto;
-    height: 100%;
     padding-bottom: 20px;
     overflow: auto;
 }
