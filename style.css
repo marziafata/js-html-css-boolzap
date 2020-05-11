@@ -205,10 +205,6 @@ input, input:focus {
     margin-top: 3px;
 }
 
-.risposta {
-    display: none;
-}
-
 .out {
     align-items: flex-end;
 }
