@@ -205,6 +205,10 @@ input, input:focus {
     margin-top: 3px;
 }
 
+.risposta {
+    display: none;
+}
+
 .out {
     align-items: flex-end;
 }
@@ -222,6 +226,7 @@ input, input:focus {
 .fumetto_bianco {
     background-color: white;
     margin-left: 20px;
+
 }
 
 .fumetto_verde, .fumetto_bianco {
