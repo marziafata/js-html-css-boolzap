@@ -1,50 +1,44 @@
 $(document).ready(function() {
 
-$('.invio').click(function(){
+    $('.invio').click(function(){
     invia_messaggio();
-})
+    })
 
-$('.testo_messaggio').function(event){
+    $('.testo_messaggio').keypress(function(event){
             var keycode = (event.keyCode ? event.keyCode : event.which);
-            // if (event.keyCode) {
-            //     keycode = event.keyCode;
-            // } else {
-            //     keycode = event.witch;
-            // }
             if(keycode == '13'){
                 invia_messaggio();
             }
-})
+    })
 
+    function invia_messaggio() {
 
-function invia_messaggio() {
+        // leggo il testo inserito dall'utente
+        var messaggioDaInviare = $('.testo_messaggio').val();
 
-    // leggo il testo inserito dall'utente
-    var messaggioDaInviare = $('.testo_messaggio').val();
-
-    // copio l'elemento template
-    var nuovo_messaggio = $('.template .riga_messaggio.out').clone();
-
-    // individuo l'elemento in cui devo scrivere il testo e contemporaneamente lo scrivo dentro
-    nuovo_messaggio.find('p.testo.out').text(messaggioDaInviare);
-
-    // appendo il nuovo messaggio nella chat
-    nuovo_messaggio.appendTo('.container_chat');
-
-    // cancello l'imput
-    var messaggioDaInviare = $('.testo_messaggio').val('');
-
-    // risposta automatica dopo 1 secondo dall'invio del messaggio
-
-    setTimeout(function(){
-        // copio l'elemento template fumetto di risposta
-        var fumetto_risposta = $('.template .riga_messaggio.in').clone();
+        // copio l'elemento template
+        var nuovo_messaggio = $('.template .riga_messaggio.out').clone();
 
         // individuo l'elemento in cui devo scrivere il testo e contemporaneamente lo scrivo dentro
-        fumetto_risposta.find('p.testo.risposta').text('Ok!')
+        nuovo_messaggio.find('p.testo.out').text(messaggioDaInviare);
 
-        // appendo il messaggio di risposta
-        fumetto_risposta.appendTo('.container_chat');}, 1000);
-}
+        // appendo il nuovo messaggio nella chat
+        nuovo_messaggio.appendTo('.container_chat');
+
+        // cancello l'imput
+        var messaggioDaInviare = $('.testo_messaggio').val('');
+
+        // risposta automatica dopo 1 secondo dall'invio del messaggio
+
+        setTimeout(function(){
+            // copio l'elemento template fumetto di risposta
+            var fumetto_risposta = $('.template .riga_messaggio.in').clone();
+
+            // individuo l'elemento in cui devo scrivere il testo e contemporaneamente lo scrivo dentro
+            fumetto_risposta.find('p.testo.risposta').text('Ok!')
+
+            // appendo il messaggio di risposta
+            fumetto_risposta.appendTo('.container_chat');}, 1000);
+    }
 
 })
