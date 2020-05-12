@@ -1,10 +1,7 @@
 $(document).ready(function() {
 
     // intercetto il click sull'icona dell'invio
-    $('.invio').click(function(){
-        // eseguo la funzione
-        invia_messaggio();
-    })
+    $('.invio').click(invia_messaggio);
 
 
     // intercetto l'input digitato dall'utente
@@ -59,3 +56,17 @@ $(document).ready(function() {
     }
 
 })
+
+// rendere possibile la ricerca di una persona specifica nella lista dei contatti
+// cliccare nell'imput e al click succede qualcosa
+
+// scrivo nell'imput
+
+// invio quello che ho scritto cliccando nella lente
+
+// il sistema controlla la corrispondenza tra quello che ho scritto e i nomi dei contatti
+
+
+// se corrisponde la lista mi mostra i contatti che matchano con la parola scritta
+
+// se non corrisponde non mostra niente

@@ -263,11 +263,11 @@ input, input:focus {
 	border-left-color: #dcf8c6;
 }
 
-.fumetto_verde p:first-child, .fumetto_bianco p:first-child {
+.fumetto p:first-child {
     margin-right: 20px;
 }
 
-.fumetto_verde p.orario, .fumetto_bianco p.orario {
+.fumetto p.orario {
     margin-right: 0;
     font-size: 10px;
 }
