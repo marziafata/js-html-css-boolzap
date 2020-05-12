@@ -58,15 +58,34 @@ $(document).ready(function() {
 })
 
 // rendere possibile la ricerca di una persona specifica nella lista dei contatti
-// cliccare nell'imput e al click succede qualcosa
+// intercettare il click sul pulsante di ricerca
+$('div.input i.fas.fa-search').click(function() {
+    // leggere quello che viene scritto nell'input
+    var testo_ricerca = $('input.ricerca').val().trim().toLowerCase();
+    console.log('ho scritto: ' + testo_ricerca);
+    //verifico che ci sia scritto qualcosa
+    if (testo_ricerca != '') {
+        // per ogni nome dei contatti verifico la corrispondenza con il testo della ricerca
+        $('div.amici').each(function() {
+            // prima estrapolo il nome
+            var nome_contatto = $(this.nome).text();
+            console.log('rubrica: ' + nome_contatto);
+            if (nome_contatto == testo_ricerca) {
+                console.log('corrisponde');
+                $('div.amici_wrap div.amici').show();
+            } else {
+                console.log('è diverso');
+                $('div.amici_wrap div.amici').hide();
+            }
+        })
 
-// scrivo nell'imput
+    } else {
+        // il campo è vuoto e si resetta la ricerca => mostro tutto
+        $('div.amici').show();
+    }
 
-// invio quello che ho scritto cliccando nella lente
 
-// il sistema controlla la corrispondenza tra quello che ho scritto e i nomi dei contatti
+    // se corrisponde la lista mi mostra i contatti che matchano con la parola scritta
 
-
-// se corrisponde la lista mi mostra i contatti che matchano con la parola scritta
-
-// se non corrisponde non mostra niente
+    // se non corrisponde non mostra niente
+})

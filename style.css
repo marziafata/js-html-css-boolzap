@@ -103,6 +103,7 @@ input, input:focus {
 .amici_wrap {
     height: calc(100% - 108px);
     overflow: auto;
+    background-color: white;
 }
 
 .amici {
