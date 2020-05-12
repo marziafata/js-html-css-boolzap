@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 // rendere possibile la ricerca di una persona specifica nella lista dei contatti
 // intercettare il click sul pulsante di ricerca
-$('div.input i.fas.fa-search').click(function() {
+$('input.ricerca').keyup(function() {
     // leggere quello che viene scritto nell'input
     var testo_ricerca = $('input.ricerca').val().trim().toLowerCase();
     console.log('ho scritto: ' + testo_ricerca);
@@ -68,14 +68,15 @@ $('div.input i.fas.fa-search').click(function() {
         // per ogni nome dei contatti verifico la corrispondenza con il testo della ricerca
         $('div.amici').each(function() {
             // prima estrapolo il nome
-            var nome_contatto = $(this.nome).text();
-            console.log('rubrica: ' + nome_contatto);
-            if (nome_contatto == testo_ricerca) {
-                console.log('corrisponde');
-                $('div.amici_wrap div.amici').show();
+            var nome_contatto = $(this).find('p.nome').text().toLowerCase();
+
+            // se quello che ho scritto corrisponde tutto o in parte a uno o più nomi dei contatti
+            if (nome_contatto.includes(testo_ricerca)) {
+                // mi mostra la "scheda contatto corrispondente"
+                $(this).show();
             } else {
-                console.log('è diverso');
-                $('div.amici_wrap div.amici').hide();
+                // e nasconde tutte le altre
+                $(this).hide();
             }
         })
 
