@@ -14,19 +14,23 @@ $(document).ready(function() {
     })
 
     // quando scrivo nell'imput, l'icona del microfono cambia in aeroplanino
+
     // aggancio l'elemento su cui clicco
     $('.testo_messaggio').focus(function(){
+
         // quando clicco cambia l'icona
         $('.footer_right .icona.invio i').toggleClass('fa-microphone fa-paper-plane');
     });
 
     // quando esco dal focus, cambia di nuovo
     $('.testo_messaggio').blur(function(){
+
         // quando clicco cambia l'icona
         $('.footer_right .icona.invio i').toggleClass('fa-paper-plane fa-microphone');
     });
 
     function invia_messaggio() {
+
         // leggo il testo inserito dall'utente
         var messaggioDaInviare = $('.testo_messaggio').val().trim();
 
@@ -55,38 +59,42 @@ $(document).ready(function() {
             fumetto_risposta.appendTo('.container_chat');}, 1000);
     }
 
-})
+    // rendere possibile la ricerca di una persona specifica nella lista dei contatti
 
-// rendere possibile la ricerca di una persona specifica nella lista dei contatti
-// intercettare il click sul pulsante di ricerca
-$('input.ricerca').keyup(function() {
-    // leggere quello che viene scritto nell'input
-    var testo_ricerca = $('input.ricerca').val().trim().toLowerCase();
-    console.log('ho scritto: ' + testo_ricerca);
-    //verifico che ci sia scritto qualcosa
-    if (testo_ricerca != '') {
-        // per ogni nome dei contatti verifico la corrispondenza con il testo della ricerca
-        $('div.amici').each(function() {
-            // prima estrapolo il nome
-            var nome_contatto = $(this).find('p.nome').text().toLowerCase();
+    // inizia a cercare non appena inizia a scrivere
+    $('input.ricerca').keyup(function() {
 
-            // se quello che ho scritto corrisponde tutto o in parte a uno o più nomi dei contatti
-            if (nome_contatto.includes(testo_ricerca)) {
-                // mi mostra la "scheda contatto corrispondente"
-                $(this).show();
-            } else {
-                // e nasconde tutte le altre
-                $(this).hide();
-            }
-        })
+        // leggere quello che viene scritto nell'input
+        var testo_ricerca = $('input.ricerca').val().trim().toLowerCase();
 
-    } else {
-        // il campo è vuoto e si resetta la ricerca => mostro tutto
-        $('div.amici').show();
-    }
+        //verifico che ci sia scritto qualcosa
+        if (testo_ricerca != '') {
 
+            // per ogni nome dei contatti verifico la corrispondenza con il testo della ricerca
+            $('div.amici').each(function() {
 
-    // se corrisponde la lista mi mostra i contatti che matchano con la parola scritta
+                // prima estrapolo il nome
+                var nome_contatto = $(this).find('p.nome').text().toLowerCase();
 
-    // se non corrisponde non mostra niente
+                // se quello che ho scritto corrisponde tutto o in parte a uno o più nomi dei contatti
+                if (nome_contatto.includes(testo_ricerca)) {
+
+                    // mi mostra la "scheda contatto corrispondente"
+                    $(this).show();
+
+                } else {
+
+                    // e nasconde tutte le altre
+                    $(this).hide();
+                }
+            })
+
+        } else {
+            
+            // il campo è vuoto e si resetta la ricerca => mostro tutto
+            $('div.amici').show();
+        }
+
+    })
+
 })
