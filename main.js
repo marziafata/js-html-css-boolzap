@@ -1,18 +1,23 @@
 $(document).ready(function() {
 
+    // intercetto il click sull'icona dell'invio
     $('.invio').click(function(){
-    invia_messaggio();
+        // eseguo la funzione
+        invia_messaggio();
     })
 
+
+    // intercetto l'input digitato dall'utente
     $('.testo_messaggio').keypress(function(event){
-            var keycode = (event.keyCode ? event.keyCode : event.which);
-            if(keycode == '13'){
+        // verifico se ha digitato "enter"
+            if(event.which == '13'){
+                // se sì eseguo la funzione
                 invia_messaggio();
             }
     })
 
-    function invia_messaggio() {
 
+    function invia_messaggio() {
         // leggo il testo inserito dall'utente
         var messaggioDaInviare = $('.testo_messaggio').val();
 

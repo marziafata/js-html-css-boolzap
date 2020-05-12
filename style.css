@@ -181,6 +181,7 @@ input, input:focus {
     cursor: pointer;
 }
 
+
 .chat {
     height: calc(100% - 121px);
     width: 100%;
@@ -188,13 +189,14 @@ input, input:focus {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    overflow: auto;
 }
 
 
 .container_chat {
     width: 80%;
     padding-bottom: 20px;
-    overflow: auto;
+
 }
 
 .riga_messaggio {
