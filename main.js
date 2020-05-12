@@ -16,10 +16,22 @@ $(document).ready(function() {
             }
     })
 
+    // quando scrivo nell'imput, l'icona del microfono cambia in aeroplanino
+    // aggancio l'elemento su cui clicco
+    $('.testo_messaggio').focus(function(){
+        // quando clicco cambia l'icona
+        $('.footer_right .icona.invio i').toggleClass('fa-microphone fa-paper-plane');
+    });
+
+    // quando esco dal focus, cambia di nuovo
+    $('.testo_messaggio').blur(function(){
+        // quando clicco cambia l'icona
+        $('.footer_right .icona.invio i').toggleClass('fa-paper-plane fa-microphone');
+    });
 
     function invia_messaggio() {
         // leggo il testo inserito dall'utente
-        var messaggioDaInviare = $('.testo_messaggio').val();
+        var messaggioDaInviare = $('.testo_messaggio').val().trim();
 
         // copio l'elemento template
         var nuovo_messaggio = $('.template .riga_messaggio.out').clone();

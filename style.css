@@ -215,19 +215,19 @@ input, input:focus {
     align-items: flex-start;
 }
 
-.fumetto_verde {
+.verde-out {
     background-color: #dcf8c6;
     margin-right: 20px;
 }
 
 
-.fumetto_bianco {
+.bianco-in {
     background-color: white;
     margin-left: 20px;
 
 }
 
-.fumetto_verde, .fumetto_bianco {
+.fumetto{
 	position: relative;
     max-width: 70%;
 	border-radius: .4em;
@@ -241,32 +241,26 @@ input, input:focus {
     margin-bottom: 12px;
 }
 
-.fumetto_bianco:after {
+.fumetto:after {
 	content: '';
 	position: absolute;
-    left: 3px;
     top: 10px;
 	width: 0;
 	border: 20px solid transparent;
-	border-right-color: white;
 	border-left: 0;
 	border-top: 0;
 	margin-top: -10px;
 	margin-left: -20px;
 }
 
-.fumetto_verde.primo:after {
-    content: '';
-	position: absolute;
+.bianco-in:after {
+    left: 3px;
+    border-right-color: white;
+    }
+
+.verde-out:after {
     right: 3px;
-    top: 10px;
-	width: 0;
-	border: 20px solid transparent;
 	border-left-color: #dcf8c6;
-	border-right: 0;
-	border-top: 0;
-	margin-top: -10px;
-	margin-right: -20px;
 }
 
 .fumetto_verde p:first-child, .fumetto_bianco p:first-child {
@@ -302,7 +296,7 @@ input, input:focus {
     height: 40px;
 }
 
-.fa-grin, .fa-microphone {
+.footer_right .icona i  {
     position: absolute;
     top: 50%;
     left: 50%;
