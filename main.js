@@ -90,7 +90,7 @@ $(document).ready(function() {
             })
 
         } else {
-            
+
             // il campo è vuoto e si resetta la ricerca => mostro tutto
             $('div.amici').show();
         }
