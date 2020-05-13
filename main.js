@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+// Invio nuovo messaggio e risposta automatica dell'utente
+
     // intercetto il click sull'icona dell'invio
     $('.invio').click(invia_messaggio);
     //fine funzione agganciata su .click
@@ -13,7 +15,7 @@ $(document).ready(function() {
             }
     }) //fine funzione agganciata su .keypress
 
-    // quando scrivo nell'imput, l'icona del microfono cambia in aeroplanino
+// quando scrivo nell'imput, l'icona del microfono cambia in aeroplanino
 
     // aggancio l'elemento su cui clicco
     $('.testo_messaggio').focus(function(){
@@ -28,6 +30,8 @@ $(document).ready(function() {
         // quando clicco cambia l'icona
         $('.footer_right .icona.invio i').toggleClass('fa-paper-plane fa-microphone');
     }); //fine funzione agganciata su .blur
+
+//funzione per inviare il messaggio + risposta automatica
 
     function invia_messaggio() {
 
@@ -59,7 +63,7 @@ $(document).ready(function() {
             fumetto_risposta.appendTo('.container_chat');}, 1000);
     } //fine funzione invia messaggio
 
-    // rendere possibile la ricerca di una persona specifica nella lista dei contatti
+// rendere possibile la ricerca di una persona specifica nella lista dei contatti
 
     // inizia a cercare non appena inizia a scrivere
     $('input.ricerca').keyup(function() {
@@ -95,5 +99,24 @@ $(document).ready(function() {
             $('div.amici').show();
         } //fine if-else
     }) //fine funzione keyup
+
+// quando clicco su un contatto, mi mostra la chat corrispondente
+
+//intercettare il click sul contatto
+$('div.amici').click(function() {
+    //recupero la chat attiva
+    var chat_attiva = $('.dialogo.active');
+    //recupero il contatto attivo = corrispondente
+    var contatto_attivo = $('.amici.active');
+
+    // tolgo la classe active alla chat attiva
+    chat_attiva.removeClass('active');
+    // tolgo la classe active al contatto attivo
+    contatto_attivo.removeClass('active');
+
+    //aggiungo la classe active al contatto su cui ho cliccato
+    $(this).addClass('active');
+    //recupero la chat corrispondente al contatto dove ho cliccato e per farlo devo sapere la posizione
+})
 
 }) //fine document ready

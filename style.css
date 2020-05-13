@@ -190,14 +190,20 @@ input, input:focus {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    overflow: auto;
 }
 
 
 .container_chat {
     width: 80%;
     padding-bottom: 20px;
+}
 
+.dialogo {
+    display: none;
+}
+
+.active {
+    display: block;
 }
 
 .riga_messaggio {
