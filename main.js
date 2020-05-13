@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // intercetto il click sull'icona dell'invio
     $('.invio').click(invia_messaggio);
-
+    //fine funzione agganciata su .click
 
     // intercetto l'input digitato dall'utente
     $('.testo_messaggio').keypress(function(event){
@@ -11,7 +11,7 @@ $(document).ready(function() {
                 // se sì eseguo la funzione
                 invia_messaggio();
             }
-    })
+    }) //fine funzione agganciata su .keypress
 
     // quando scrivo nell'imput, l'icona del microfono cambia in aeroplanino
 
@@ -20,14 +20,14 @@ $(document).ready(function() {
 
         // quando clicco cambia l'icona
         $('.footer_right .icona.invio i').toggleClass('fa-microphone fa-paper-plane');
-    });
+    });//fine funzione agganciata su .focus
 
     // quando esco dal focus, cambia di nuovo
     $('.testo_messaggio').blur(function(){
 
         // quando clicco cambia l'icona
         $('.footer_right .icona.invio i').toggleClass('fa-paper-plane fa-microphone');
-    });
+    }); //fine funzione agganciata su .blur
 
     function invia_messaggio() {
 
@@ -57,7 +57,7 @@ $(document).ready(function() {
 
             // appendo il messaggio di risposta
             fumetto_risposta.appendTo('.container_chat');}, 1000);
-    }
+    } //fine funzione invia messaggio
 
     // rendere possibile la ricerca di una persona specifica nella lista dei contatti
 
@@ -93,8 +93,7 @@ $(document).ready(function() {
 
             // il campo è vuoto e si resetta la ricerca => mostro tutto
             $('div.amici').show();
-        }
+        } //fine if-else
+    }) //fine funzione keyup
 
-    })
-
-})
+}) //fine document ready
