@@ -102,8 +102,8 @@ $(document).ready(function() {
 
 // quando clicco su un contatto, mi mostra la chat corrispondente
 
-// METODO UNO DI VISUALIZZAZIONE CHAT CORRENTE: .INDEX()
-//intercettare il click sul contatto
+// // METODO 1 DI VISUALIZZAZIONE CHAT CORRENTE: .INDEX()
+// // intercettare il click sul contatto
 // $('div.amici').click(function() {
 //     //recupero la chat attiva
 //     var chat_attiva = $('.dialogo.active');
@@ -133,15 +133,13 @@ $('div.amici').click(function() {
 
     // mi recupero il nome del contatto
     var nome_contatto = $(this).find('p.nome').text();
-    console.log(nome_contatto);
 
-    //recupero la chat corrispondente al contatto che ho cliccato
+    //recupero la chat corrispondente al contatto che ho cliccato tramite l'attributo DATA
     var chat_da_mostrare = $('div.dialogo[data-nome-contatto="' + nome_contatto + '"]');
 
-    console.log(chat_da_mostrare);
-
+    // mostro la chat corrispondente
     chat_da_mostrare.addClass('active');
 
-})
+})//fine funzione
 
 }) //fine document ready
