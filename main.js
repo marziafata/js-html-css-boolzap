@@ -102,27 +102,46 @@ $(document).ready(function() {
 
 // quando clicco su un contatto, mi mostra la chat corrispondente
 
+// METODO UNO DI VISUALIZZAZIONE CHAT CORRENTE: .INDEX()
 //intercettare il click sul contatto
+// $('div.amici').click(function() {
+//     //recupero la chat attiva
+//     var chat_attiva = $('.dialogo.active');
+//     //recupero il contatto attivo = corrispondente
+//     var contatto_attivo = $('.amici.active');
+//
+//     // tolgo la classe active alla chat attiva
+//     chat_attiva.removeClass('active');
+//     // tolgo la classe active al contatto attivo
+//     contatto_attivo.removeClass('active');
+//
+//     //aggiungo la classe active al contatto su cui ho cliccato
+//     $(this).addClass('active');
+//     //recupero la chat corrispondente al contatto dove ho cliccato e per farlo devo sapere la posizione del contatto dove ho cliccato
+//     var posizione = $(this).index();
+//
+//     // adesso recupero la chat con la stessa posizione
+//     var chat_da_mostrare = $('div.dialogo').eq(posizione);
+//
+//     chat_da_mostrare.addClass('active');
+// })//fine funzione
+
+//METODO 2 DI VISUALIZZAZIONE CHAT CORRENTE: ATTRIBUTI DATA
 $('div.amici').click(function() {
-    //recupero la chat attiva
-    var chat_attiva = $('.dialogo.active');
-    //recupero il contatto attivo = corrispondente
-    var contatto_attivo = $('.amici.active');
+    // tolgo la classe active a tutti i contatti che eventualmente ce l'hanno
+    $('div.dialogo').removeClass('active');
 
-    // tolgo la classe active alla chat attiva
-    chat_attiva.removeClass('active');
-    // tolgo la classe active al contatto attivo
-    contatto_attivo.removeClass('active');
+    // mi recupero il nome del contatto
+    var nome_contatto = $(this).find('p.nome').text();
+    console.log(nome_contatto);
 
-    //aggiungo la classe active al contatto su cui ho cliccato
-    $(this).addClass('active');
-    //recupero la chat corrispondente al contatto dove ho cliccato e per farlo devo sapere la posizione del contatto dove ho cliccato
-    var posizione = $(this).index();
+    //recupero la chat corrispondente al contatto che ho cliccato
+    var chat_da_mostrare = $('div.dialogo[data-nome-contatto="' + nome_contatto + '"]');
 
-    // adesso recupero la chat con la stessa posizione
-    var chat_da_mostrare = $('div.dialogo').eq(posizione);
+    console.log(chat_da_mostrare);
 
     chat_da_mostrare.addClass('active');
+
 })
 
 }) //fine document ready
