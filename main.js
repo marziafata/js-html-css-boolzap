@@ -116,7 +116,13 @@ $('div.amici').click(function() {
 
     //aggiungo la classe active al contatto su cui ho cliccato
     $(this).addClass('active');
-    //recupero la chat corrispondente al contatto dove ho cliccato e per farlo devo sapere la posizione
+    //recupero la chat corrispondente al contatto dove ho cliccato e per farlo devo sapere la posizione del contatto dove ho cliccato
+    var posizione = $(this).index();
+
+    // adesso recupero la chat con la stessa posizione
+    var chat_da_mostrare = $('div.dialogo').eq(posizione);
+
+    chat_da_mostrare.addClass('active');
 })
 
 }) //fine document ready
