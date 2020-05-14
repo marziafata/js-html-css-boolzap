@@ -131,11 +131,11 @@ $('div.amici').click(function() {
     // tolgo la classe active a tutti i contatti che eventualmente ce l'hanno
     $('div.dialogo').removeClass('active');
 
-    // mi recupero il nome del contatto
-    var nome_contatto = $(this).find('p.nome').text();
+    // mi recupero il DATA del contatto
+    var codice_contatto = $(this).data('contatto');
 
     //recupero la chat corrispondente al contatto che ho cliccato tramite l'attributo DATA
-    var chat_da_mostrare = $('div.dialogo[data-nome-contatto="' + nome_contatto + '"]');
+    var chat_da_mostrare = $('div.dialogo[data-nome-contatto="' + codice_contatto + '"]');
 
     // mostro la chat corrispondente
     chat_da_mostrare.addClass('active');

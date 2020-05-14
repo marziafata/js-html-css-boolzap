@@ -330,3 +330,9 @@ p.orario {
 .template {
     display: none;
 }
+
+.menu_tendina {
+    background-color: white;
+    border-radius: 3px;
+    display: none;
+}
