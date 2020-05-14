@@ -112,9 +112,6 @@ input, input:focus {
     background-color: white;
 }
 
-.click {
-    background-color: gainsboro;
-}
 
 .amici:hover {
     background-color: #f7f7f7;
@@ -204,6 +201,10 @@ input, input:focus {
 
 .active {
     display: block;
+}
+
+.amici.active {
+    background-color: #ebebeb;
 }
 
 .riga_messaggio {

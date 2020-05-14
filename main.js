@@ -44,8 +44,8 @@ $(document).ready(function() {
         // individuo l'elemento in cui devo scrivere il testo e contemporaneamente lo scrivo dentro
         nuovo_messaggio.find('p.testo.out').text(messaggioDaInviare);
 
-        // appendo il nuovo messaggio nella chat
-        nuovo_messaggio.appendTo('.container_chat');
+        // appendo il nuovo messaggio nella chat che ho attiva
+        nuovo_messaggio.appendTo('.dialogo.active');
 
         // cancello l'imput
         var messaggioDaInviare = $('.testo_messaggio').val('');
@@ -59,8 +59,8 @@ $(document).ready(function() {
             // individuo l'elemento in cui devo scrivere il testo e contemporaneamente lo scrivo dentro
             fumetto_risposta.find('p.testo.risposta').text('Ok!')
 
-            // appendo il messaggio di risposta
-            fumetto_risposta.appendTo('.container_chat');}, 1000);
+            // appendo il messaggio di risposta nella chat che ho attiva
+            fumetto_risposta.appendTo('.dialogo.active');}, 1000);
     } //fine funzione invia messaggio
 
 // rendere possibile la ricerca di una persona specifica nella lista dei contatti
@@ -103,6 +103,7 @@ $(document).ready(function() {
 // quando clicco su un contatto, mi mostra la chat corrispondente
 
 // // METODO 1 DI VISUALIZZAZIONE CHAT CORRENTE: .INDEX()
+// // QUESTO METODO NON é FLESSIBILE PERCHé NON POSSO SPOSTARE GLI ELEMENTI
 // // intercettare il click sul contatto
 // $('div.amici').click(function() {
 //     //recupero la chat attiva
@@ -127,9 +128,11 @@ $(document).ready(function() {
 // })//fine funzione
 
 //METODO 2 DI VISUALIZZAZIONE CHAT CORRENTE: ATTRIBUTI DATA
+//METODO FLESSIBILE: POSSO SPOSTARE COSE
 $('div.amici').click(function() {
-    // tolgo la classe active a tutti i contatti che eventualmente ce l'hanno
+    // tolgo la classe active a tutti i contatti e tutte le chat che eventualmente ce l'hanno
     $('div.dialogo').removeClass('active');
+    $('div.amici').removeClass('active');
 
     // mi recupero il DATA del contatto
     var codice_contatto = $(this).data('contatto');
@@ -137,8 +140,13 @@ $('div.amici').click(function() {
     //recupero la chat corrispondente al contatto che ho cliccato tramite l'attributo DATA
     var chat_da_mostrare = $('div.dialogo[data-nome-contatto="' + codice_contatto + '"]');
 
-    // mostro la chat corrispondente
+    // mostro la chat corrispondente aggungendo la classe active e aggiungo la classe anche al contatto cliccato per selezionarlo
     chat_da_mostrare.addClass('active');
+    $(this).addClass('active');
+
+    //cambio nome del contatto attivo nell'header
+    //recupero il nome del contatto su cui ho cliccato
+    //inserisco il nome nell'header accanto all'immagine
 
 })//fine funzione
 
