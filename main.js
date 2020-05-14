@@ -155,24 +155,32 @@ $('div.amici').click(function() {
     var src_contatto = $(this).find('.cerchio img').attr('src')
     //la inserisco nell'header sfruttando l'attributo
     $('.avatar_attivo img').attr('src', src_contatto);
-
 })//fine funzione
-
 
 //Menù a tendina messaggio
 //mostro la freccetta al passaggio del mouse
-$('.fumetto').mouseover(function(){
+$('.container_chat').on('mouseover', '.fumetto',function(){
     $(this).find('.fa-chevron-down').show();
 });
 
 //tolgo la freccetta se il mouse esce dal fumetto
-$('.fumetto').mouseleave(function(){
+$('.container_chat').on('mouseleave', '.fumetto',function(){
     $(this).find('.fa-chevron-down').hide();
 });
 
-$('.fa-chevron-down.apri_menu').click(function(){
-    alert('pociao');
+//al click sulla freccetta voglio aprire il dropdown
+$('.container_chat').on('click', '.accessori .fa-chevron-down',function(){
+    // visualizzo il div menu_tendina corrispondente al messaggio su cui ho cliccato
+    $(this).siblings('.menu_tendina').toggleClass('active');
+
 });
+
+//tolgo dropdown se il mouse esce dal fumetto
+$('.container_chat').on('mouseleave', '.fumetto',function(){
+    $(this).find('.menu_tendina.active').removeClass('active');
+});
+
+
 
 
 }) //fine document ready
