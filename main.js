@@ -142,4 +142,21 @@ $('div.amici').click(function() {
 
 })//fine funzione
 
+
+//Menù a tendina messaggio
+//mostro la freccetta al passaggio del mouse
+$('.fumetto').mouseover(function(){
+    $(this).find('.fa-chevron-down').show();
+});
+
+//tolgo la freccetta se il mouse esce dal fumetto
+$('.fumetto').mouseleave(function(){
+    $(this).find('.fa-chevron-down').hide();
+});
+
+$('.fumetto .accessori .fa-chevron-down').click(function(){
+    $(this)
+});
+
+
 }) //fine document ready
