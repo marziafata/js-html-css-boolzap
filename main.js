@@ -146,7 +146,15 @@ $('div.amici').click(function() {
 
     //cambio nome del contatto attivo nell'header
     //recupero il nome del contatto su cui ho cliccato
+    var nome_contatto = $(this).find('.dati_contatto .riga1 p.nome').text();
     //inserisco il nome nell'header accanto all'immagine
+    $('.header_right .avatar_attivo p.nome_chat').text(nome_contatto);
+
+    //cambio l'immagine del contatto nell'header
+    //recupero la foto del contatto su cui ho cliccato impostando il percorso dell'immagine nella parte di destra dei contatti
+    var src_contatto = $(this).find('.cerchio img').attr('src')
+    //la inserisco nell'header sfruttando l'attributo
+    $('.avatar_attivo img').attr('src', src_contatto);
 
 })//fine funzione
 
