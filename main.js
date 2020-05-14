@@ -170,8 +170,8 @@ $('.fumetto').mouseleave(function(){
     $(this).find('.fa-chevron-down').hide();
 });
 
-$('.fumetto .accessori .fa-chevron-down').click(function(){
-    $(this)
+$('.fa-chevron-down.apri_menu').click(function(){
+    alert('pociao');
 });
 
 

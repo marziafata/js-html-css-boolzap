@@ -11,6 +11,10 @@ body {
     letter-spacing: 0.5px;
 }
 
+i {
+    cursor: pointer;
+}
+
 .container {
     width: 100%;
     height: calc(100vh - 40px);
@@ -217,6 +221,7 @@ input, input:focus {
     justify-content: flex-start;
     position: relative;
     margin-top: 3px;
+    position: relative;
 }
 
 .out {
@@ -337,8 +342,21 @@ p.orario {
     display: none;
 }
 
+
 .menu_tendina {
-    background-color: white;
-    border-radius: 3px;
     display: none;
+    background-color: white;
+    border-radius: 7px;
+    padding: 11px;
+    color: #919191;
+    box-shadow: 0px 1px 2px 0px rgb(0, 0, 0, 0.2);
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    z-index: 99;
+}
+
+.menu_tendina ul li {
+    list-style: none;
+    margin-top: 10px;
 }
