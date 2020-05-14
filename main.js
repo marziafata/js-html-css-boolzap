@@ -161,24 +161,23 @@ $('div.amici').click(function() {
 //mostro la freccetta al passaggio del mouse
 $('.container_chat').on('mouseover', '.fumetto',function(){
     $(this).find('.fa-chevron-down').show();
-});
+});//fine funzione
 
 //tolgo la freccetta se il mouse esce dal fumetto
 $('.container_chat').on('mouseleave', '.fumetto',function(){
     $(this).find('.fa-chevron-down').hide();
-});
+});//fine funzione
 
 //al click sulla freccetta voglio aprire il dropdown
 $('.container_chat').on('click', '.accessori .fa-chevron-down',function(){
     // visualizzo il div menu_tendina corrispondente al messaggio su cui ho cliccato
     $(this).siblings('.menu_tendina').toggleClass('active');
-
-});
+});//fine funzione
 
 //tolgo dropdown se il mouse esce dal fumetto
 $('.container_chat').on('mouseleave', '.fumetto',function(){
     $(this).find('.menu_tendina.active').removeClass('active');
-});
+});//fine funzione
 
 
 
