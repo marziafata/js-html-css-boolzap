@@ -180,6 +180,20 @@ $('.container_chat').on('mouseleave', '.fumetto',function(){
 });//fine funzione
 
 
+//cancella messaggio per me (lo rimuove dalla chat)
+//intercetto il click sulla voce cancella messaggio
+$('.container_chat').on('click', 'div.menu_tendina > ul > li:nth-child(2)',function(){
+    $(this).closest('.riga_messaggio').remove();
+});//fine funzione
+
+
+//cancella messaggio oer tutti (appare la scritta messaggio eliminato)
+//intercetto il click sulla voce cancella messaggio
+$('.container_chat').on('click', 'div.menu_tendina > ul > li:nth-child(3)',function(){
+    $(this).closest('.accessori').siblings().text('Hai eliminato questo messaggio');
+});//fine funzione
+
+
 
 
 }) //fine document ready
