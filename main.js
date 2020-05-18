@@ -31,21 +31,35 @@ $(document).ready(function() {
         $('.footer_right .icona.invio i').toggleClass('fa-paper-plane fa-microphone');
     }); //fine funzione agganciata su .blur
 
-//funzione per inviare il messaggio + risposta automatica
+funzione per inviare il messaggio + risposta automatica
 
     function invia_messaggio() {
 
         // leggo il testo inserito dall'utente
         var messaggioDaInviare = $('.testo_messaggio').val().trim();
 
-        // copio l'elemento template
-        var nuovo_messaggio = $('.template .riga_messaggio.out').clone();
+        // // copio l'elemento template
+        // var nuovo_messaggio = $('.template .riga_messaggio.out').clone();
+        //
+        // // individuo l'elemento in cui devo scrivere il testo e contemporaneamente lo scrivo dentro
+        // nuovo_messaggio.find('p.testo.out').text(messaggioDaInviare);
+        //
+        // // appendo il nuovo messaggio nella chat che ho attiva
+        // nuovo_messaggio.appendTo('.dialogo.active');
 
-        // individuo l'elemento in cui devo scrivere il testo e contemporaneamente lo scrivo dentro
-        nuovo_messaggio.find('p.testo.out').text(messaggioDaInviare);
+        //creazione messaggio con l'uso degli oggetti
 
-        // appendo il nuovo messaggio nella chat che ho attiva
-        nuovo_messaggio.appendTo('.dialogo.active');
+        var source = $('#entry-template').html();
+        var template = Handlebars.compile(source);
+        var context = {
+            'messaggio': messaggioDaInviare,
+            'orario': 1800
+        };
+
+        var html = template(context);
+        console.log(html);
+
+        html.appendTo('.dialogo.active');
 
         // cancello l'imput
         var messaggioDaInviare = $('.testo_messaggio').val('');
@@ -187,13 +201,23 @@ $('.container_chat').on('click', 'div.menu_tendina > ul > li:nth-child(2)',funct
 });//fine funzione
 
 
-//cancella messaggio oer tutti (appare la scritta messaggio eliminato)
+//cancella messaggio per tutti (appare la scritta messaggio eliminato)
 //intercetto il click sulla voce cancella messaggio
 $('.container_chat').on('click', 'div.menu_tendina > ul > li:nth-child(3)',function(){
     $(this).closest('.accessori').siblings().text('Hai eliminato questo messaggio');
 });//fine funzione
 
 
+//creazione messaggio con l'uso degli oggetti
 
+var source = $('#entry-template').html();
+var template = Handlebars.compile(source);
+var context = {
+    'messaggio': 'ciao',
+    'orario': 1800
+};
+
+var html = template(context);
+console.log(html);
 
 }) //fine document ready

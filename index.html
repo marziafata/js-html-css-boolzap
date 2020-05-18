@@ -938,7 +938,7 @@
 <!-- template -->
 <div class="template">
 
-    <div class="riga_messaggio out">
+    <!-- <div class="riga_messaggio out">
         <div class="fumetto verde-out primo riga1">
             <p class="testo out"></p>
             <div class="accessori">
@@ -953,7 +953,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="riga_messaggio in">
         <div class="fumetto bianco-in riga1">
@@ -974,23 +974,24 @@
 </div>
 
 <!-- TEMPLATE con HANDLEBARS -->
-
-<div class="riga_messaggio out">
-    <div class="fumetto verde-out primo riga1">
-        <p class="testo out"></p>
-        <div class="accessori">
-            <i class="fa fa-chevron-down"></i>
-            <p class="orario">18:42</p>
-            <div class="menu_tendina ">
-                <ul>
-                    <li>Info messaggio</li>
-                    <li>Cancella messaggio per me</li>
-                    <li>Cancella messaggio per tutti</li>
-                </ul>
+<script id="entry-template" type="text/x-handlebars-template">
+    <div class="riga_messaggio out">
+        <div class="fumetto verde-out primo riga1">
+            <p class="testo out">{{messaggio}}</p>
+            <div class="accessori">
+                <i class="fa fa-chevron-down"></i>
+                <p class="orario">{{orario}}</p>
+                <div class="menu_tendina ">
+                    <ul>
+                        <li>Info messaggio</li>
+                        <li>Cancella messaggio per me</li>
+                        <li>Cancella messaggio per tutti</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</script>
 
 <!-- javascript e jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
