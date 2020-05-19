@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+//creo le variabili che mi serviranno con HANDLEBARS
+
+var source = $('#entry-template').html();
+var template = Handlebars.compile(source);
+
 // Invio nuovo messaggio e risposta automatica dell'utente
 
     // intercetto il click sull'icona dell'invio
@@ -31,7 +36,7 @@ $(document).ready(function() {
         $('.footer_right .icona.invio i').toggleClass('fa-paper-plane fa-microphone');
     }); //fine funzione agganciata su .blur
 
-funzione per inviare il messaggio + risposta automatica
+// funzione per inviare il messaggio + risposta automatica
 
     function invia_messaggio() {
 
@@ -47,19 +52,16 @@ funzione per inviare il messaggio + risposta automatica
         // // appendo il nuovo messaggio nella chat che ho attiva
         // nuovo_messaggio.appendTo('.dialogo.active');
 
-        //creazione messaggio con l'uso degli oggetti
+        //creo un oggetto che contenga gli elementi di compilazione che mi servono
 
-        var source = $('#entry-template').html();
-        var template = Handlebars.compile(source);
         var context = {
             'messaggio': messaggioDaInviare,
             'orario': 1800
         };
 
-        var html = template(context);
-        console.log(html);
+        var nuovo_messaggio = template(context);
 
-        html.appendTo('.dialogo.active');
+        $('.dialogo.active').append(nuovo_messaggio);
 
         // cancello l'imput
         var messaggioDaInviare = $('.testo_messaggio').val('');
