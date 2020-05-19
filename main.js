@@ -56,7 +56,7 @@ var template = Handlebars.compile(source);
 
         var context = {
             'messaggio': messaggioDaInviare,
-            'orario': 1800
+            'orario': 18.00
         };
 
         var nuovo_messaggio = template(context);
